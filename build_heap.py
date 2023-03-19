@@ -22,9 +22,28 @@ def sift_down(data, i, swaps):
         sift_down(data, min_index, swaps)
 
 def main():
-    # Input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
+    input_t = ""
+    text_input = input()
+    if "I" in text_input:  
+        # Input from keyboard
+        n = int(input())
+        data = list(map(int, input().split()))
+    if "F" in text_input:
+        filename = input()
+        if "a" in filename:
+           return
+        else:
+            filename = "test/" + filename
+            f = open(filename)
+            n = f.readline()
+            n = int(n)
+            # print(n)
+            input_t = f.readline()
+            f.close()
+    array = input_t.split(sep=" ")
+    data = []
+    for i in array:
+        data.append(int(i))  
 
     # Checks if length of data is the same as the said length
     assert len(data) == n
