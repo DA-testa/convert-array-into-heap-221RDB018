@@ -33,17 +33,17 @@ def main():
         if "a" in filename:
            return
         else:
-            filename = "test/" + filename
+            filename = "tests/" + filename
             f = open(filename)
             n = f.readline()
             n = int(n)
             # print(n)
             input_t = f.readline()
             f.close()
-    array = input_t.split(sep=" ")
-    data = []
-    for i in array:
-        data.append(int(i))  
+            array = input_t.split(sep=" ")
+            data = []
+            for i in array:
+                data.append(int(i))  
 
     # Checks if length of data is the same as the said length
     assert len(data) == n
